@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
 /**
- * Created by валик on 03.06.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅ on 03.06.2015.
  */
 public class ApplicationServiceImplTest {
 
@@ -30,7 +30,7 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBooksWithKNames();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository).removeBook(new Book("KNAME","description",100,"AUTOR",date));
@@ -40,7 +40,7 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBooksWithKNames();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository,never()).removeBook(any());
@@ -56,7 +56,7 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBooksWithKNames();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository,never()).removeBook(any());
@@ -79,7 +79,7 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBoksIdNotFibanachi();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository).removeBook(new Book(4,"as","description",100,"AUTOR",date));
@@ -95,12 +95,11 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBoksIdNotFibanachi();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository,never()).removeBook(any());
     }
-    @Ignore
     @Test
     public void testRemoveBoksIdNotFibanachiAllIdFibanachi() throws Exception {
         List<Book> list = new LinkedList<>();
@@ -114,7 +113,7 @@ public class ApplicationServiceImplTest {
 
         BookRepository bookRepository = mock(BookRepositoryImpl.class);
         when(bookRepository.getAllBooks()).thenReturn(list);
-        AplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
+        ApplicationService aplicationService = new ApplicationServiceImpl(bookRepository);
         aplicationService.removeBoksIdNotFibanachi();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository,never()).removeBook(any());
