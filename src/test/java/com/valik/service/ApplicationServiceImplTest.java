@@ -117,5 +117,6 @@ public class ApplicationServiceImplTest {
         aplicationService.removeBoksIdNotFibanachi();
         verify(bookRepository,times(1)).getAllBooks();
         verify(bookRepository,never()).removeBook(any());
+
     }
 }
